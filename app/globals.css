@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-display: "General Sans", ui-sans-serif, system-ui;
+  --font-body: "General Sans", ui-sans-serif, system-ui;
+
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: auto; /* Lenis handles smooth scroll; avoid double-smoothing */
+}
+
+html,
+body {
+  @apply bg-os-bg text-white;
+  overscroll-behavior: none;
+}
+
+html.light body {
+  @apply bg-os-bgLight text-os-surface;
+}
+
+/* ---------- Custom scrollbar (desktop, dark) ---------- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: theme("colors.os.border");
+  border-radius: 999px;
+}
+html.light ::-webkit-scrollbar-thumb {
+  background: theme("colors.os.borderLight");
+}
+
+/* ---------- Custom cursor: hide native cursor on desktop only ---------- */
+@media (hover: hover) and (pointer: fine) {
+  html.custom-cursor-active,
+  html.custom-cursor-active * {
+    cursor: none !important;
+  }
+}
+
+/* ---------- Blueprint grid background utility ---------- */
+.bg-blueprint {
+  background-image: linear-gradient(rgba(232, 163, 61, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232, 163, 61, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ---------- Focus visibility (accessibility floor) ---------- */
+:focus-visible {
+  outline: 2px solid theme("colors.accent.DEFAULT");
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- Selection color ---------- */
+::selection {
+  background: theme("colors.accent.DEFAULT");
+  color: #0b0d10;
+}
