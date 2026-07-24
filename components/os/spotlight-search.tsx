@@ -126,7 +126,7 @@ export function SpotlightSearch() {
             <motion.div
               role="dialog"
               aria-modal
-              className="fixed left-1/2 top-[18vh] z-[96] w-[min(92vw,560px)] -translate-x-1/2 overflow-hidden rounded-xl border border-os-border bg-os-surface shadow-2xl light:border-os-borderLight light:bg-os-surfaceLight"
+              className="fixed left-4 right-4 top-[18vh] z-[96] mx-auto max-w-[560px] overflow-hidden rounded-xl border border-os-border bg-os-surface shadow-2xl light:border-os-borderLight light:bg-os-surfaceLight"
               initial={{ opacity: 0, y: -12, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -12, scale: 0.98 }}
