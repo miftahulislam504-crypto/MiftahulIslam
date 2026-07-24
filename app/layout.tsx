@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { fontMono, fontDisplay, fontBody } from "@/lib/fonts";
 import { Providers } from "@/components/providers";
@@ -13,6 +13,13 @@ import { SITE } from "@/lib/config";
 export const metadata: Metadata = {
   title: `${SITE.name} — ${SITE.role}`,
   description: SITE.tagline,
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({
