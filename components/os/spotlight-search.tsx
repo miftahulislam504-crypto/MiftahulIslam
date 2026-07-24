@@ -75,13 +75,18 @@ export function SpotlightSearch() {
   }, [open]);
 
   function goTo(href: string) {
-    setOpen(false);
     const el = document.querySelector(href);
-    if (el && lenis) {
-      lenis.scrollTo(el as HTMLElement, { offset: -24 });
-    } else if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
+    setOpen(false);
+    // Wait a tick so useScrollLock's cleanup (lenis.start()) actually runs
+    // before we ask Lenis to scroll — calling scrollTo while Lenis is still
+    // stopped is a no-op.
+    requestAnimationFrame(() => {
+      if (el && lenis) {
+        lenis.scrollTo(el as HTMLElement, { offset: -24 });
+      } else if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    });
   }
 
   function onInputKeyDown(e: React.KeyboardEvent) {

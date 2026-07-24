@@ -18,6 +18,9 @@ html,
 body {
   @apply bg-os-bg text-white;
   overscroll-behavior: none;
+}
+
+body {
   overflow-x: hidden;
   max-width: 100%;
 }
