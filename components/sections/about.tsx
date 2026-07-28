@@ -2,7 +2,6 @@
 
 import { SectionReveal } from "@/components/ui/section-reveal";
 import { TerminalPanel } from "@/components/os/terminal-panel";
-import { BlueprintPanel } from "@/components/os/blueprint-panel";
 
 export function About() {
   return (
@@ -19,13 +18,9 @@ export function About() {
         </h2>
       </SectionReveal>
 
-      <div className="mt-12 grid grid-cols-1 gap-10 md:mt-16 md:grid-cols-2 md:gap-12">
+      <div className="mt-12 max-w-2xl md:mt-16">
         <SectionReveal delay={0.1}>
           <TerminalPanel />
-        </SectionReveal>
-
-        <SectionReveal delay={0.2} className="pb-6">
-          <BlueprintPanel />
         </SectionReveal>
       </div>
     </section>
