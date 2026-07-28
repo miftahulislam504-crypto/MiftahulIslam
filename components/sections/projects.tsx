@@ -7,7 +7,7 @@ import { SectionReveal } from "@/components/ui/section-reveal";
 import { HoverGlow } from "@/components/ui/hover-glow";
 import { useCursor, cursorHoverProps } from "@/components/providers/cursor-provider";
 import { useScrollLock } from "@/hooks/use-scroll-lock";
-import { PROJECTS } from "@/lib/config";
+import { PROJECTS, PROJECT_CATEGORIES } from "@/lib/config";
 
 type Project = (typeof PROJECTS)[number];
 
@@ -359,9 +359,46 @@ function FullscreenPreview({
   );
 }
 
+function CategoryRow({
+  label,
+  count,
+  projects,
+  onExpand,
+}: {
+  label: string;
+  count: number;
+  projects: Project[];
+  onExpand: (project: Project) => void;
+}) {
+  if (projects.length === 0) return null;
+
+  return (
+    <div className="mt-14 first:mt-10 md:mt-16 md:first:mt-14">
+      <SectionReveal className="px-6 md:px-10">
+        <div className="flex items-baseline gap-3">
+          <h3 className="font-display text-xl font-bold md:text-2xl">{label}</h3>
+          <span className="font-mono text-xs text-os-muted">
+            {count} {count === 1 ? "project" : "projects"}
+          </span>
+        </div>
+      </SectionReveal>
+
+      <div
+        className="mt-5 flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-6 md:mt-6 md:px-10"
+        style={{ scrollbarWidth: "thin" }}
+      >
+        {projects.map((project, i) => (
+          <SectionReveal key={project.id} delay={i * 0.06} className="flex-shrink-0">
+            <DesktopWindow project={project} onExpand={() => onExpand(project)} />
+          </SectionReveal>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function Projects() {
   const [expanded, setExpanded] = useState<Project | null>(null);
-  const scrollerRef = useRef<HTMLDivElement>(null);
 
   useScrollLock(!!expanded);
 
@@ -387,22 +424,24 @@ export function Projects() {
           A desk full of open windows.
         </h2>
         <p className="mt-2 max-w-md text-sm text-os-muted">
-          Scroll sideways. Click a window to open it full screen — each one is
-          a live look at the real, deployed site.
+          Grouped by kind. Scroll sideways within a row, click a window to
+          open it full screen — each one is a live look at the real, deployed
+          site.
         </p>
       </SectionReveal>
 
-      <div
-        ref={scrollerRef}
-        className="mt-10 flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-6 md:mt-14 md:px-10"
-        style={{ scrollbarWidth: "thin" }}
-      >
-        {PROJECTS.map((project, i) => (
-          <SectionReveal key={project.id} delay={i * 0.06} className="flex-shrink-0">
-            <DesktopWindow project={project} onExpand={() => setExpanded(project)} />
-          </SectionReveal>
-        ))}
-      </div>
+      {PROJECT_CATEGORIES.map((category) => {
+        const categoryProjects = PROJECTS.filter((p) => p.category === category.id);
+        return (
+          <CategoryRow
+            key={category.id}
+            label={category.label}
+            count={categoryProjects.length}
+            projects={[...categoryProjects]}
+            onExpand={setExpanded}
+          />
+        );
+      })}
 
       <AnimatePresence>
         {expanded && (

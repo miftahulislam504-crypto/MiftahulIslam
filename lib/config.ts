@@ -62,10 +62,24 @@ export const ABOUT = {
 } as const;
 
 // ---------- Projects → Mini Desktop Windows ----------
+
+// Category keys used to group PROJECTS below. Order here also controls the
+// order sections render in on the page.
+export const PROJECT_CATEGORIES = [
+  { id: "community", label: "Community" },
+  { id: "engineering", label: "Engineering" },
+  { id: "ecommerce", label: "E-commerce" },
+  { id: "educational", label: "Educational" },
+  { id: "business", label: "Business Tools" },
+] as const;
+
+export type ProjectCategory = (typeof PROJECT_CATEGORIES)[number]["id"];
+
 export const PROJECTS = [
   {
     id: "brotherfit",
     name: "BrotherFit",
+    category: "ecommerce" as ProjectCategory,
     description:
       "A full storefront for a clothing brand — cart, checkout, and order tracking, backed by an admin panel and an AI-assisted customer support engine.",
     stack: ["Next.js", "Firebase", "Firestore", "Tailwind CSS"],
@@ -76,6 +90,7 @@ export const PROJECTS = [
   {
     id: "ummahnet",
     name: "UmmahNet",
+    category: "community" as ProjectCategory,
     description:
       "A social network for the Muslim community — Islamic content sharing, halal event discovery, and dawah-focused tools, rebuilt end-to-end in English.",
     stack: ["Next.js", "Firebase", "Firestore", "Auth"],
@@ -86,6 +101,7 @@ export const PROJECTS = [
   {
     id: "build-enginex",
     name: "Build EngineX",
+    category: "ecommerce" as ProjectCategory,
     description:
       "A marketplace connecting Bangladeshi builders with construction material suppliers — bKash and SSLCommerz checkout, vendor and order management.",
     stack: ["Next.js", "Firebase", "bKash API", "SSLCommerz"],
@@ -96,6 +112,7 @@ export const PROJECTS = [
   {
     id: "business-suites",
     name: "Business Suites",
+    category: "business" as ProjectCategory,
     description:
       "An all-in-one SME dashboard — invoicing, multi-location inventory, HR/payroll records, and a business analytics view, in one tool instead of five.",
     stack: ["Next.js", "Firebase", "Firestore", "Chart.js"],
@@ -106,6 +123,7 @@ export const PROJECTS = [
   {
     id: "ak-ummah-foundation",
     name: "Ak Ummah Foundation",
+    category: "community" as ProjectCategory,
     description:
       "A donation platform for a non-profit — bKash-powered giving, campaign progress tracking, and welfare program listings donors can follow directly.",
     stack: ["Next.js", "Firebase", "bKash API"],
@@ -116,6 +134,7 @@ export const PROJECTS = [
   {
     id: "chemistry-unfiltered",
     name: "Chemistry Unfiltered",
+    category: "educational" as ProjectCategory,
     description:
       "A Bengali-language chemistry platform organized বিষয় → অধ্যায় → টপিক, with a rebuilt interactive periodic table and a hierarchical রিভিশন system.",
     stack: ["Next.js", "Firebase", "Firestore", "Tailwind CSS"],
@@ -126,6 +145,7 @@ export const PROJECTS = [
   {
     id: "mathx",
     name: "MathX",
+    category: "educational" as ProjectCategory,
     description:
       "A visual mathematics learning universe — concept maps and step-by-step interactive explanations across 10+ subjects, installable as a PWA.",
     stack: ["Next.js", "PWA", "Firebase"],
@@ -136,6 +156,7 @@ export const PROJECTS = [
   {
     id: "physicsverse",
     name: "PhysicsVerse",
+    category: "educational" as ProjectCategory,
     description:
       "Physics topics brought to life through interactive simulations and experiment-style modules, mapped directly to the SSC and HSC syllabus.",
     stack: ["Next.js", "Firebase", "Three.js"],
@@ -146,6 +167,7 @@ export const PROJECTS = [
   {
     id: "enginex-hub",
     name: "EngineX Hub",
+    category: "engineering" as ProjectCategory,
     description:
       "The front door to the CivilOS suite — unified login, user profiles with project history, and sidebar navigation linking all six connected apps.",
     stack: ["Next.js", "Firebase Auth", "Firestore"],
@@ -156,6 +178,7 @@ export const PROJECTS = [
   {
     id: "enginex-archdrawing",
     name: "EngineX Arch Drawing",
+    category: "engineering" as ProjectCategory,
     description:
       "A full CAD workflow that runs entirely in the browser — BNBC-compliant floor plans, elevations, and sections, with PDF/SVG export.",
     stack: ["Next.js", "Canvas / SVG", "Firebase"],
@@ -166,6 +189,7 @@ export const PROJECTS = [
   {
     id: "enginex-structural",
     name: "EngineX Structural",
+    category: "engineering" as ProjectCategory,
     description:
       "Structural design across 20+ modules — a DSM solver, full RC design per ACI 318-19, 3D space frame analysis, code-checks, and DXF export.",
     stack: ["JavaScript", "DSM Solver", "3D Engine"],
@@ -176,6 +200,7 @@ export const PROJECTS = [
   {
     id: "enginex-estimate",
     name: "EngineX Estimate",
+    category: "engineering" as ProjectCategory,
     description:
       "Automated Bill of Quantities generation priced against live Bangladeshi market rates, exportable cleanly to PDF or Excel.",
     stack: ["Next.js", "Firebase", "PDF Export"],
@@ -186,6 +211,7 @@ export const PROJECTS = [
   {
     id: "enginex-projectmgmt",
     name: "EngineX Project Mgmt",
+    category: "engineering" as ProjectCategory,
     description:
       "Construction PM software — Gantt-based scheduling, milestone progress tracking, RAJUK/CDA compliance checklists, and team task assignment.",
     stack: ["Next.js", "Firebase", "Firestore"],
@@ -196,6 +222,7 @@ export const PROJECTS = [
   {
     id: "enginex-learning",
     name: "EngineX Learning",
+    category: "engineering" as ProjectCategory,
     description:
       "Civil engineering exam prep aligned to the BNBC syllabus — MCQ, Viva, and Flashcard study modes with progress tracking across sessions.",
     stack: ["Next.js", "Firebase", "Firestore"],

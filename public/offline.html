@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Offline — Miftahul Islam</title>
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #0B0D10;
+      color: #ffffff;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .window {
+      width: 100%;
+      max-width: 420px;
+      background: #14171C;
+      border: 1px solid #242830;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .chrome {
+      display: flex;
+      gap: 8px;
+      padding: 14px 16px;
+      border-bottom: 1px solid #242830;
+    }
+    .dot { width: 11px; height: 11px; border-radius: 999px; }
+    .dot.red { background: #E8564B; }
+    .dot.amber { background: #E8A33D; }
+    .dot.green { background: #4CAF7D; }
+    .content {
+      padding: 32px 24px 28px;
+      text-align: center;
+    }
+    .icon {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 20px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 30% 30%, #E8A33D22, transparent 70%);
+      border: 1px solid #242830;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: ui-monospace, monospace;
+      font-weight: 700;
+      color: #E8A33D;
+      font-size: 22px;
+    }
+    h1 {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0 0 8px;
+      color: #ffffff;
+    }
+    p {
+      margin: 0 0 24px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #7C838F;
+    }
+    button {
+      appearance: none;
+      border: 1px solid #E8A33D;
+      background: transparent;
+      color: #E8A33D;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    button:hover {
+      background: #E8A33D;
+      color: #0B0D10;
+    }
+    .path {
+      margin-top: 20px;
+      font-family: ui-monospace, monospace;
+      font-size: 12px;
+      color: #7C838F;
+    }
+  </style>
+</head>
+<body>
+  <div class="window">
+    <div class="chrome">
+      <div class="dot red"></div>
+      <div class="dot amber"></div>
+      <div class="dot green"></div>
+    </div>
+    <div class="content">
+      <div class="icon">MI</div>
+      <h1>You're offline</h1>
+      <p>This page couldn't be reached. Check your connection and try again — previously visited pages may still work.</p>
+      <button onclick="window.location.reload()">Retry</button>
+      <div class="path">status: disconnected</div>
+    </div>
+  </div>
+</body>
+</html>
