@@ -5,21 +5,19 @@ export const SITE = {
   name: "Miftahul Islam",
   role: "Web Developer / Civil Engineer",
   tagline: "Building software the way I build structures — one solid layer at a time.",
-  email: "hello@example.com",
+  email: "miftahulislam504@gmail.com",
   resumeUrl: "/resume.pdf",
   socials: {
-    github: "https://github.com/",
-    linkedin: "https://linkedin.com/",
-    whatsapp: "https://wa.me/qr/Z7YVXEUAWERDO1",
+    github: "https://github.com/miftahulislam504-crypto",
+    whatsapp: "https://wa.me/8801776485474",
   },
 };
 
 // ---------- Contact → macOS Floating Dock ----------
 export const DOCK_ITEMS = [
-  { name: "GitHub", icon: "Github", href: "https://github.com/" },
-  { name: "LinkedIn", icon: "Linkedin", href: "https://linkedin.com/" },
-  { name: "Email", icon: "Mail", href: "mailto:hello@example.com" },
-  { name: "WhatsApp", icon: "MessageCircle", href: "https://wa.me/" },
+  { name: "GitHub", icon: "Github", href: "https://github.com/miftahulislam504-crypto" },
+  { name: "Email", icon: "Mail", href: "mailto:miftahulislam504@gmail.com" },
+  { name: "WhatsApp", icon: "MessageCircle", href: "https://wa.me/8801776485474" },
   { name: "Resume", icon: "FileText", href: "/resume.pdf" },
 ] as const;
 
@@ -136,7 +134,7 @@ export const PROJECTS = [
     name: "Chemistry Unfiltered",
     category: "educational" as ProjectCategory,
     description:
-      "A Bengali-language chemistry platform organized subject > chapter > topic , with a rebuilt interactive periodic table and a hierarchical revision system.",
+      "A Bengali-language chemistry platform organized বিষয় → অধ্যায় → টপিক, with a rebuilt interactive periodic table and a hierarchical রিভিশন system.",
     stack: ["Next.js", "Firebase", "Firestore", "Tailwind CSS"],
     accentColor: "#E8564B",
     url: "https://chemistry-unfiltered.vercel.app",
@@ -165,6 +163,28 @@ export const PROJECTS = [
     year: "2025",
   },
   {
+    id: "esoquranshikhiacademy",
+    name: "এসো কুরআন শিখি একাডেমি",
+    category: "educational" as ProjectCategory,
+    description:
+      "A step-by-step Quran and Arabic learning platform — Tajweed and Makhraj lessons, self-assessment, courses, and progress tracking through to certification.",
+    stack: ["Next.js", "Firebase", "Firestore"],
+    accentColor: "#186447",
+    url: "https://esoquranshikhiacademy.vercel.app",
+    year: "2026",
+  },
+  {
+    id: "biomind",
+    name: "BioMind",
+    category: "educational" as ProjectCategory,
+    description:
+      "A biology learning platform bringing concepts to life with structured lessons and interactive study tools for students.",
+    stack: ["Next.js", "Firebase", "Firestore"],
+    accentColor: "#4CAF7D",
+    url: "https://biomindlogy.vercel.app",
+    year: "2026",
+  },
+  {
     id: "enginex-hub",
     name: "EngineX Hub",
     category: "engineering" as ProjectCategory,
@@ -183,7 +203,7 @@ export const PROJECTS = [
       "A full CAD workflow that runs entirely in the browser — BNBC-compliant floor plans, elevations, and sections, with PDF/SVG export.",
     stack: ["Next.js", "Canvas / SVG", "Firebase"],
     accentColor: "#E8A33D",
-    url: "https://enginexdraw.vercel.app",
+    url: "https://enginex-archdrawing.vercel.app",
     year: "2025",
   },
   {
@@ -194,7 +214,7 @@ export const PROJECTS = [
       "Structural design across 20+ modules — a DSM solver, full RC design per ACI 318-19, 3D space frame analysis, code-checks, and DXF export.",
     stack: ["JavaScript", "DSM Solver", "3D Engine"],
     accentColor: "#4A9EFF",
-    url: "https://enginexstruc.vercel.app",
+    url: "https://enginex-structural.vercel.app",
     year: "2025",
   },
   {
@@ -205,7 +225,7 @@ export const PROJECTS = [
       "Automated Bill of Quantities generation priced against live Bangladeshi market rates, exportable cleanly to PDF or Excel.",
     stack: ["Next.js", "Firebase", "PDF Export"],
     accentColor: "#4CAF7D",
-    url: "https://enginexquanta.vercel.app",
+    url: "https://enginex-estimate.vercel.app",
     year: "2024",
   },
   {
@@ -216,7 +236,7 @@ export const PROJECTS = [
       "Construction PM software — Gantt-based scheduling, milestone progress tracking, RAJUK/CDA compliance checklists, and team task assignment.",
     stack: ["Next.js", "Firebase", "Firestore"],
     accentColor: "#E8564B",
-    url: "https://enginexproject.vercel.app",
+    url: "https://enginex-projectmgmt.vercel.app",
     year: "2024",
   },
   {
@@ -227,7 +247,7 @@ export const PROJECTS = [
       "Civil engineering exam prep aligned to the BNBC syllabus — MCQ, Viva, and Flashcard study modes with progress tracking across sessions.",
     stack: ["Next.js", "Firebase", "Firestore"],
     accentColor: "#C77DFF",
-    url: "https://enginexlearn.vercel.app",
+    url: "https://enginex-learning.vercel.app",
     year: "2024",
   },
 ] as const;
@@ -239,13 +259,11 @@ export const SKILLS = [
   "TypeScript",
   "Firebase / Firestore",
   "Tailwind CSS",
-  "Three.js Shaders",
   "Flutter",
   "Framer Motion",
   "Three.js",
-  "Node.js",
   "FastAPI",
-  "Git & GitHub",
+  "Structural Analysis (ETABS/SAFE)",
   "REST APIs",
   "PWA",
 ] as const;
