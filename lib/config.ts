@@ -254,16 +254,18 @@ export const PROJECTS = [
 
 // ---------- Skills → Floating Command Palette ----------
 export const SKILLS = [
+  "Html",
+  "CSS",
   "Next.js",
   "React",
   "TypeScript",
+  "JavaScript",
   "Firebase / Firestore",
   "Tailwind CSS",
   "Flutter",
   "Framer Motion",
   "Three.js",
   "FastAPI",
-  "Structural Analysis (ETABS/SAFE)",
   "REST APIs",
   "PWA",
 ] as const;
