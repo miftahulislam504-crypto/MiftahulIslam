@@ -11,19 +11,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  async headers() {
-    return [
-      {
-        source: "/(.*)",
-        headers: [
-          {
-            key: "Content-Security-Policy",
-            value: "frame-ancestors 'self' melvora-bd.miftahulislam504.workers.dev",
-          },
-        ],
-      },
-    ];
-  },
 };
 
 export default nextConfig;
